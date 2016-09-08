@@ -3,7 +3,7 @@
   fields:
 
   - dimension: id
-    label: 'Order ID'
+    group_label: 'Orders'
     primary_key: true
     type: number
     sql: ${TABLE}.id
@@ -15,7 +15,7 @@
     sql: ${TABLE}.created_at
 
   - dimension: status
-    label: 'Order Status'
+    group_label: 'Orders'
     type: string
     sql: ${TABLE}.status
 

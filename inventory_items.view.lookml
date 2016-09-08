@@ -9,6 +9,7 @@
     sql: ${TABLE}.id
 
   - dimension: cost
+    group_label: 'Product Information'
     type: number
     sql: ${TABLE}.cost
 
@@ -24,15 +25,15 @@
     hidden: true
     sql: ${TABLE}.product_id
 
-  - dimension_group: sold
-    label: 'Inventory Items Sold'
+  - dimension_group: inventory_items_sold
+    group_label: 'Product Information'
     type: time
     hidden: true
     timeframes: [time, date, week, month]
     sql: ${TABLE}.sold_at
 
   - measure: count
-    label: 'Inventory Items Count'
+    group_label: 'Product Information'
     type: count
     hidden: true
     drill_fields: [id, products.item_name, products.id, order_items.count, t1.count]

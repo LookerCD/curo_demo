@@ -3,30 +3,30 @@
   fields:
 
   - dimension: id
-    label: 'User ID'
+    group_label: 'Users'
     primary_key: true
     type: number
     sql: ${TABLE}.id
 
   - dimension: age
-    label: 'User Age'
+    group_label: 'Users'
     type: number
     sql: ${TABLE}.age
     
   - dimension: age_tier
-    label: 'User Age Tier'
+    group_label: 'Users'
     type: tier
     tiers: [0,10,20,30,40,50,60,70]
     style: integer
     sql: ${age}
 
   - dimension: city
-    label: 'User City'
+    group_label: 'Users'
     type: string
     sql: ${TABLE}.city
 
   - dimension: country
-    label: 'User Country'
+    group_label: 'Users'
     type: string
     sql: ${TABLE}.country
 
@@ -37,7 +37,7 @@
     sql: ${TABLE}.created_at
 
   - dimension: email
-    label: 'User Email'
+    group_label: 'Users'
     type: string
     sql: ${TABLE}.email
 
@@ -51,23 +51,24 @@
     hidden: true
     sql: ${TABLE}.last_name
     
-  - dimension: user_name
+  - dimension: name
+    group_label: 'Users'
     sql: ${first_name} || ' ' || ${last_name}
 
   - dimension: gender
-    label: 'User Gender'
+    group_label: 'Users'
     type: string
     sql: ${TABLE}.gender
 
 
 
   - dimension: state
-    label: 'User State'
+    group_label: 'Users'
     type: string
     sql: ${TABLE}.state
 
   - dimension: zip
-    label: 'User Post Code'
+    group_label: 'Users'
     type: number
     sql: ${TABLE}.zip
 
@@ -79,15 +80,13 @@
   - measure: average_age
     type: avg
     sql: ${age}
+    drill_fields: 
 
 
   # ----- Sets of fields for drilling ------
   sets:
     detail:
-    - id
-    - last_name
-    - first_name
-    - events.count
-    - orders.count
-    - user_data.count
+    - name
+    - gender
+    - email
 

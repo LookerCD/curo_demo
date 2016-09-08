@@ -9,6 +9,7 @@
     sql: ${TABLE}.id
 
   - dimension: inventory_item_id
+    group_label: 'Order Items'
     type: number
     hidden: true
     sql: ${TABLE}.inventory_item_id
@@ -19,14 +20,14 @@
     sql: ${TABLE}.order_id
 
   - dimension_group: returned
-    label: 'Order Item Returned'
+    label: 'Order Items Returned'
     type: time
     hidden: true
     timeframes: [time, date, week, month]
     sql: ${TABLE}.returned_at
 
   - dimension: sale_price
-    label: 'Order Item Sale Price'
+    group_label: 'Order Items'
     type: number
     sql: ${TABLE}.sale_price
 
