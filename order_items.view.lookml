@@ -27,7 +27,8 @@
     sql: ${TABLE}.returned_at
 
   - dimension: sale_price
-    group_label: 'Order Items'
+    label: 'Item Sale Price'
+    group_label: 'Orders'
     type: number
     sql: ${TABLE}.sale_price
 

@@ -53,7 +53,7 @@
     
   - dimension: name
     group_label: 'Users'
-    sql: ${first_name} || ' ' || ${last_name}
+    sql: concat(${first_name},' ',${last_name})
 
   - dimension: gender
     group_label: 'Users'
